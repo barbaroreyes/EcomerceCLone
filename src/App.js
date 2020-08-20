@@ -1,26 +1,11 @@
-import React ,{Component}from 'react';
+import React from 'react';
 import './App.css';
+import  HomePage from './Componets/homePage'
 
-class App extends Component  {
-  constructor(){
-    super()
-    
-  }
-  componentDidMount(){
-   
-  }
-  
- render(){
-  return (
-    <div className="App">
-     
-      
-        
-     
-    </div>
-     
-  )
- }
+function App () {
+  return <div>
+    <HomePage/>
+  </div>
 }
 
 export default App
