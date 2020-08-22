@@ -1,5 +1,6 @@
 import React from 'react';
-import FormInput from '../../fom-imput/form-inputCompo'
+import FormInput from '../../fom-imput/form-inputCompo';
+import CustomButton from '../../Componets/custom-butttom/custom-buttomComp'
 import './singin-compo.scss';
 
 
@@ -42,7 +43,7 @@ class SingIn extends React.Component{
                label='password'
                required/>
 
-               <input type="submit"  value ='Submit Form'/>
+               <CustomButton type="submit">Sign in</CustomButton>
               
            </form>
          </div>
