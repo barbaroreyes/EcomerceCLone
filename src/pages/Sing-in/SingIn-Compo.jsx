@@ -1,5 +1,5 @@
 import React from 'react';
-// import FormInput from '../../fom-imput/form-inputCompo.jsx'
+import FormInput from '../../fom-imput/form-inputCompo'
 import './singin-compo.scss';
 
 
@@ -26,15 +26,22 @@ class SingIn extends React.Component{
            <h2>I Already have a account</h2>
            <span>Sign in whith your email and your password</span>
            <form onSubmit={this.handleSubmit}>
-               <input name="email" type='email' onChange= {this.handleChange} value ={this.state.email}/>
-               <label>Email</label>
-               <input 
+               <FormInput 
+               name="email" 
+               type='email' 
+               handleChange= {this.handleChange} 
+               value ={this.state.email} 
+               label= 'email'
+               required/>
+               
+               <FormInput 
                name="password" 
                type='password' 
                value ={this.state.email}
-               onChange= {this.handleChange}
+               handleChange= {this.handleChange}
+               label='password'
                required/>
-               <label>Password</label>
+
                <input type="submit"  value ='Submit Form'/>
               
            </form>
