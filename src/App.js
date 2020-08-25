@@ -4,15 +4,33 @@ import './App.css';
 import  HomePage from './pages/Homepages/homePage';
 import ShopPage  from './pages/shop/shop.componet';
 import SninAndUp from './pages/Sing/singCompo';
+import {auth} from  './fireBase/firebase.util'
 
 import  Header  from './Componets/header.componet//header.comp';
 
 
 
-function App () {
+class  App extends React.Component {
+ constructor(){
+   super()
+   this.state ={
+     currentUser: null
+   }
+ }
+ unsubscribeFromAuth = null
+ componentDidMount(){
+  this.unsubscribeFromAuth= auth.onAuthStateChanged(user =>{
+     this.setState({currentUser:user})
+     console.log(user)
+   })
+ }
+ componentWillUnmount(){
+   this.unsubscribeFromAuth();
+ }
+ render(){
   return (
     <div>
-      <Header/>
+      <Header currentUser={this.state.currentUser}/>
       <Switch>
    <Route exact path='/' component={HomePage} />
    <Route  path='/shop' component={ShopPage} />
@@ -21,6 +39,7 @@ function App () {
     
   </div>
   )
+ }
 }
 
 export default App
