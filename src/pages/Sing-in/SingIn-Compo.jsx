@@ -1,6 +1,7 @@
 import React from 'react';
 import FormInput from '../../fom-imput/form-inputCompo';
-import CustomButton from '../../Componets/custom-butttom/custom-buttomComp'
+import CustomButton from '../../Componets/custom-butttom/custom-buttomComp';
+import{signInWidthGoogle} from '../../fireBase/firebase.util'
 import './singin-compo.scss';
 
 
@@ -44,6 +45,7 @@ class SingIn extends React.Component{
                required/>
 
                <CustomButton type="submit">Sign in</CustomButton>
+               <CustomButton onClick={signInWidthGoogle}>{' '}Sign in With Google {' '}</CustomButton>
               
            </form>
          </div>
