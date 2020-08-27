@@ -7,9 +7,10 @@ import {ReactComponent as  Logo} from '../../assets/crow.svg';
 
 const Header = ({currentUser}) => (
     <div className='header'>
-   <Link className ='logo-container'  to='/'>
-    <Logo  className='logo'/>
-    </Link>
+      <Link className ='logo-container'  to='/'>
+       <Logo  className='logo'/>
+       </Link>
+
     <div className ='options'>
         <Link className='option' to='/shop'>
            Shop
@@ -18,20 +19,19 @@ const Header = ({currentUser}) => (
            Contact
         </Link>
         {
-            currentUser ?
+            currentUser ?(
             <div className='option' onClick ={()=> auth.signOut()}>Sign Out</div>
-            :
+             ) :(
             <Link className ='option' to='/signin'>
                 Sign In 
             </Link>
+             )
 
 
         }
-        
-
-    </div>
+     </div>
     
 
-    </div>
+</div>
 )
 export default Header
