@@ -3,7 +3,7 @@ import './collection-item.styles.scss';
  
 const CollectionItem = ({id,name,price,imageUrl})=> (
     <div className='collection-item shadow-5 grow'>
-        <div className='image ' 
+        <div className ='image ' 
         style={{backgroundImage :`url(${imageUrl})`}}>
         </div>
         <div className='collection footer'>
